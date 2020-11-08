@@ -22,6 +22,7 @@ namespace calc
             secondNumber = 0;
             currentState = 1;
             this.resultText.Text = "0";
+            mathOperator = null;
         }
 
         private void OnSelectNumber(object sender, EventArgs e)
@@ -50,6 +51,13 @@ namespace calc
         {
             currentState = -2;
             Button button = (Button)sender;
+            if (mathOperator == button.Text) return;
+            else if (mathOperator != null)
+            {
+                string pressed = this.resultText.Text;
+                pressed = pressed.Remove(pressed.Length-1);
+                this.resultText.Text = pressed;
+            }
             mathOperator = button.Text;
             this.resultText.Text += mathOperator;
         }
@@ -63,11 +71,18 @@ namespace calc
                 {
                     case "+": result = firstNumber + secondNumber; break;
                     case "-": result = firstNumber - secondNumber; break;
-                    case "X": result = firstNumber * secondNumber; break;
+                    case "x": result = firstNumber * secondNumber; break;
                     case "/": result = firstNumber / secondNumber; break;
                 }
+
+                string resultString = result.ToString("N10");
+
+                while (resultString.EndsWith("0")){
+                    resultString = resultString.Remove(resultString.Length - 1);
+                }
+
+                this.resultText.Text = resultString;
                 
-                this.resultText.Text = result.ToString("N0");
                 firstNumber = result;
                 currentState = -1;
             }

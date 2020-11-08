@@ -86,7 +86,7 @@
                     FontSize="20" FontAttributes="Bold"
                     Clicked="OnSelectNumber"
             />
-            <Button Text="X" BackgroundColor="#131313" TextColor="#FFFFFF" 
+            <Button Text="x" BackgroundColor="#131313" TextColor="#FFFFFF" 
                     Grid.Column="3" Grid.Row="3"
                     FontSize="20" FontAttributes="Bold"
                     Clicked="OnSelectOperator"
