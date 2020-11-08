@@ -32,6 +32,7 @@
             <!-- ******************************************************************************************************************************
             *****************************************************           Row 1          *************************************************** 
             ****************************************************************************************************************************** -->
+            
             <Button Text="%" BackgroundColor="#131313" TextColor="#FFFFFF" 
                     Grid.Column="0" Grid.Row="1" 
                     FontSize="20" FontAttributes="Italic"
@@ -56,14 +57,20 @@
             <!-- ******************************************************************************************************************************
             *****************************************************           Row 2          *************************************************** 
             ****************************************************************************************************************************** -->
+            
             <Button Text="1/x" BackgroundColor="#131313" TextColor="#FFFFFF" Grid.Column="0" Grid.Row="2" FontSize="20" FontAttributes="Italic" />
             <Button Text="x²" BackgroundColor="#131313" TextColor="#FFFFFF" Grid.Column="1" Grid.Row="2" FontSize="20" FontAttributes="Italic" />
             <Button Text="√x" BackgroundColor="#131313" TextColor="#FFFFFF" Grid.Column="2" Grid.Row="2" FontSize="20" FontAttributes="Italic" />
-            <Button Text="/" BackgroundColor="#131313" TextColor="#FFFFFF" Grid.Column="3" Grid.Row="2" FontSize="20" FontAttributes="Bold" />
+            <Button Text="/" BackgroundColor="#131313" TextColor="#FFFFFF" 
+                    Grid.Column="3" Grid.Row="2" 
+                    FontSize="20" FontAttributes="Bold" 
+                    Clicked="OnSelectOperator"        
+            />
 
             <!-- ******************************************************************************************************************************
             *****************************************************           Row 3          *************************************************** 
             ****************************************************************************************************************************** -->
+            
             <Button Text="7" BackgroundColor="#060606" TextColor="#FFFFFF"
                     Grid.Column="0" Grid.Row="3"
                     FontSize="20" FontAttributes="Bold" 
@@ -79,11 +86,16 @@
                     FontSize="20" FontAttributes="Bold"
                     Clicked="OnSelectNumber"
             />
-            <Button Text="X" BackgroundColor="#131313" TextColor="#FFFFFF" Grid.Column="3" Grid.Row="3" FontSize="20" FontAttributes="Bold" />
+            <Button Text="X" BackgroundColor="#131313" TextColor="#FFFFFF" 
+                    Grid.Column="3" Grid.Row="3"
+                    FontSize="20" FontAttributes="Bold"
+                    Clicked="OnSelectOperator"
+            />
 
             <!-- ******************************************************************************************************************************
             *****************************************************           Row 4          *************************************************** 
             ****************************************************************************************************************************** -->
+            
             <Button Text="4" BackgroundColor="#060606" TextColor="#FFFFFF"
                     Grid.Column="0" Grid.Row="4" 
                     FontSize="20" FontAttributes="Bold" 
@@ -99,11 +111,16 @@
                     FontSize="20" FontAttributes="Bold" 
                     Clicked="OnSelectNumber"
             />
-            <Button Text="-" BackgroundColor="#131313" TextColor="#FFFFFF" Grid.Column="3" Grid.Row="4" FontSize="20" FontAttributes="Bold" />
+            <Button Text="-" BackgroundColor="#131313" TextColor="#FFFFFF"
+                    Grid.Column="3" Grid.Row="4"
+                    FontSize="20" FontAttributes="Bold" 
+                    Clicked="OnSelectOperator"
+            />
 
             <!-- ******************************************************************************************************************************
             *****************************************************           Row 5          *************************************************** 
             ****************************************************************************************************************************** -->
+            
             <Button Text="1" BackgroundColor="#060606" TextColor="#FFFFFF" 
                     Grid.Column="0" Grid.Row="5" 
                     FontSize="20" FontAttributes="Bold" 
@@ -119,11 +136,16 @@
                     FontSize="20" FontAttributes="Bold" 
                     Clicked="OnSelectNumber"
             />
-            <Button Text="+" BackgroundColor="#131313" TextColor="#FFFFFF" Grid.Column="3" Grid.Row="5" FontSize="20" FontAttributes="Bold" />
+            <Button Text="+" BackgroundColor="#131313" TextColor="#FFFFFF"
+                    Grid.Column="3" Grid.Row="5" 
+                    FontSize="20" FontAttributes="Bold" 
+                    Clicked="OnSelectOperator"
+            />
 
             <!-- ******************************************************************************************************************************
             *****************************************************           Row 6          *************************************************** 
             ****************************************************************************************************************************** -->
+            
             <Button Text="+/-" BackgroundColor="#060606" TextColor="#FFFFFF" Grid.Column="0" Grid.Row="6" FontSize="20" FontAttributes="Bold" />
             <Button Text="0" BackgroundColor="#060606" TextColor="#FFFFFF"
                     Grid.Column="1" Grid.Row="6"
@@ -131,7 +153,11 @@
                     Clicked="OnSelectNumber"
             />
             <Button Text="," BackgroundColor="#060606" TextColor="#FFFFFF" Grid.Column="2" Grid.Row="6" FontSize="20" FontAttributes="Bold" />
-            <Button Text="=" BackgroundColor="#2c2c2c" TextColor="#FFFFFF" Grid.Column="3" Grid.Row="6" FontSize="20" FontAttributes="Bold" />
+            <Button Text="=" BackgroundColor="#2c2c2c" TextColor="#FFFFFF"
+                    Grid.Column="3" Grid.Row="6"
+                    FontSize="20" FontAttributes="Bold"
+                    Clicked="OnCalculate"
+            />
         </Grid>
     </ContentPage.Content>
 </ContentPage>
