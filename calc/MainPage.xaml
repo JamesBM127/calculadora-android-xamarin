@@ -59,15 +59,23 @@
             <Button Text="DEL" BackgroundColor="#131313" TextColor="#FFFFFF"
                     Grid.Column="3" Grid.Row="2" 
                     FontSize="20" FontAttributes="Italic" 
-                    
+                    Clicked="OnDelButton"
             />
 
             <!-- ******************************************************************************************************************************
             *****************************************************           Row 3          *************************************************** 
             ****************************************************************************************************************************** -->
             
-            <Button Text="1/x" BackgroundColor="#131313" TextColor="#FFFFFF" Grid.Column="0" Grid.Row="3" FontSize="20" FontAttributes="Italic" />
-            <Button Text="x²" BackgroundColor="#131313" TextColor="#FFFFFF" Grid.Column="1" Grid.Row="3" FontSize="20" FontAttributes="Italic" />
+            <Button Text="1/x" BackgroundColor="#131313" TextColor="#FFFFFF" 
+                    Grid.Column="0" Grid.Row="3" 
+                    FontSize="20" FontAttributes="Italic" 
+                    Clicked="On1x"
+            />
+            <Button Text="x²" BackgroundColor="#131313" TextColor="#FFFFFF" 
+                    Grid.Column="1" Grid.Row="3" 
+                    FontSize="20" FontAttributes="Italic" 
+                    Clicked="OnXSquare"
+            />
             <Button Text="√x" BackgroundColor="#131313" TextColor="#FFFFFF" Grid.Column="2" Grid.Row="3" FontSize="20" FontAttributes="Italic" />
             <Button Text="/" BackgroundColor="#131313" TextColor="#FFFFFF" 
                     Grid.Column="3" Grid.Row="3" 
