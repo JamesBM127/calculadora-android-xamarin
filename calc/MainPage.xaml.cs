@@ -20,6 +20,7 @@ namespace calc
         bool percentPressed = false;
         bool oneXPressed = false;
         bool xSqr = false;
+        bool xRoot = false;
 
         private void OnClear(object sender, EventArgs e)
         {
@@ -35,6 +36,7 @@ namespace calc
             percentPressed = false;
             oneXPressed = false;
             xSqr = false;
+            xRoot = false;
         }
 
         /* ******************************************************************************************************************************
@@ -96,7 +98,15 @@ namespace calc
 
         private void OnDelButton(object sender, EventArgs e)
         {
-            string numberDel = this.resultText.Text.Remove(this.resultText.Text.Length - 1);
+            string numberDel = this.resultText.Text;
+
+            //If the number on display has length 1, they will throw an exception
+            //This if/else is used to NOT thrown the exception and crash the app       
+            if (numberDel.Length > 1)
+                numberDel = this.resultText.Text.Remove(this.resultText.Text.Length - 1);
+            else
+                numberDel = "0";
+
             if(firstOperator)
             {
                 firstNumber = double.Parse(numberDel);
@@ -148,6 +158,27 @@ namespace calc
             {
                 this.resultHistory.Text = firstNumber.ToString() + "+srq(" + secondNumber.ToString() + ")";
                 secondNumber = Math.Pow(secondNumber, 2);
+                this.resultText.Text = secondNumber.ToString();
+            }
+        }
+
+        /* ******************************************************************************************************************************
+        ********************************************************** OnXRoot ************************************************************
+        ****************************************************************************************************************************** */
+        private void OnXRoot(object sender, EventArgs e)
+        {
+            xRoot = true;
+            specialOperation = true;
+            if (firstOperator)
+            {
+                this.resultHistory.Text = "√(" + firstNumber.ToString() + ")";
+                firstNumber = Math.Sqrt(firstNumber);
+                this.resultText.Text = firstNumber.ToString();
+            }
+            else
+            {
+                this.resultHistory.Text = firstNumber.ToString() + "+√(" + secondNumber.ToString() + ")";
+                secondNumber = Math.Sqrt(secondNumber);
                 this.resultText.Text = secondNumber.ToString();
             }
         }
@@ -233,7 +264,6 @@ namespace calc
                     double result = simple4Operations();
                     this.resultText.Text = result.ToString("N10");
 
-                    removeTheZeros();
                     oneXPressed = false;
                 }
 
@@ -243,10 +273,19 @@ namespace calc
                     double result = simple4Operations();
                     this.resultText.Text = result.ToString();
 
-                    removeTheZeros();
                     xSqr = false;
                 }
+
+                if (xRoot)
+                {
+                    this.resultHistory.Text = firstNumber.ToString() + "+√(" + secondNumber.ToString() + ")=";
+                    double result = simple4Operations();
+                    this.resultText.Text = result.ToString();
+
+                    xRoot = false;
+                }
                 
+                removeTheZeros();
                 firstNumber = double.Parse(this.resultText.Text);
                 firstOperator = false;
                 specialOperation = false;
@@ -262,9 +301,7 @@ namespace calc
                 string resultString = result.ToString("N10");
 
                 //this while is being used to remove a lot of 0 from string
-                while (resultString.EndsWith("0") || resultString.EndsWith(",")){
-                    resultString = resultString.Remove(resultString.Length - 1);
-                }
+                removeTheZeros();
 
                 if (resultString.EndsWith("."))
                 {

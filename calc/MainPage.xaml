@@ -76,7 +76,11 @@
                     FontSize="20" FontAttributes="Italic" 
                     Clicked="OnXSquare"
             />
-            <Button Text="√x" BackgroundColor="#131313" TextColor="#FFFFFF" Grid.Column="2" Grid.Row="3" FontSize="20" FontAttributes="Italic" />
+            <Button Text="√x" BackgroundColor="#131313" TextColor="#FFFFFF"
+                    Grid.Column="2" Grid.Row="3"
+                    FontSize="20" FontAttributes="Italic"
+                    Clicked="OnXRoot"
+            />
             <Button Text="/" BackgroundColor="#131313" TextColor="#FFFFFF" 
                     Grid.Column="3" Grid.Row="3" 
                     FontSize="20" FontAttributes="Bold" 
